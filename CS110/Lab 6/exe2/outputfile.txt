@@ -1,0 +1,3 @@
+The sum of the input values is 10.
+The number of valid input values is 4.
+The average is 2.5.
