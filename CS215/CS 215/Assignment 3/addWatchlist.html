@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add/Remove Watchlist</title>
+    <script>
+        window.onload = function(event){
+            document.getElementById("playlistForm").addEventListener("submit", PlaylistForm, false);
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="index_styling.css"/>
+    <script type = "text/javascript"  src = "playlistValidation.js" ></script>
+    <style>
+        body{
+            background: #333;
+        }
+        .container {
+            background: #fff;
+            border-radius: 20px;
+            border: 10px solid #ccc;
+            box-shadow: 0 1px 2px #0000001a;
+        }
+        form {
+            padding: 2em;
+        }
+        label {
+            color: #555;
+            display: inline-block;
+            padding-top: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+            <img src="image/swag.png" alt="swag" style= "max-width: 300px; max-height: 200px;">
+            <div style = "margin-bottom: 1px;">SwaggerSoul</div>    
+    </header>
+    <!-- This is for the Navigation bar -->
+    <!------------------------------------------------------------------------------------------------------------>
+    <ul>
+            <li><a href = "index.html">Home</a></li>
+            <li class="dropdown"><a>Genre</a>
+                <div class="dropdown-content">
+                    <a href = "genre.html">Action</a>
+                    <a href = "genre.html">Adventure</a>
+                    <a href = "genre.html">Biography</a>
+                    <a href = "genre.html">Comedy</a>
+                    <a href = "genre.html">Crime</a>
+                    <a href = "genre.html">Drama</a>
+                    <a href = "genre.html">Family</a>
+                    <a href = "genre.html">Fantasy</a>
+                    <a href = "genre.html">Horror</a>
+                    <a href = "genre.html">Musical</a>
+                    <a href = "genre.html">Mystery</a>
+                    <a href = "genre.html">Patriotic</a>
+                    <a href = "genre.html">Romance</a>
+                    <a href = "genre.html">Sci-fi</a>
+                    <a href = "genre.html">Social</a>
+                    <a href = "genre.html">Sports</a>
+                    <a href = "genre.html">Spy</a>
+                    <a href = "genre.html">Suspense</a>
+                    <a href = "genre.html">Thriller</a>
+                    <a href = "genre.html">War</a>
+                    <a href = "genre.html">Western</a>
+                    <a href = "genre.html">Wuxia</a>
+                    <a href = "genre.html">Zombie</a>
+                </div>
+            </li>
+            <li class="dropdown"><a>Origin</a>
+                <div class="dropdown-content">
+                    <a href = "origin.html">American</a>
+                    <a href = "origin.html">Australian</a>
+                    <a href = "origin.html">Bollywood</a>
+                    <a href = "origin.html">British</a>
+                    <a href = "origin.html">Canadian</a>
+                    <a href = "origin.html">Chinese</a>
+                    <a href = "origin.html">Japanese</a>
+                    <a href = "origin.html">Punjabi</a>
+                    <a href = "origin.html">Russian</a>
+                </div>
+            </li>
+            <li><a href = "watchlist.html">Watchlist</a></li>
+            <li><a href = "contactUs.html">Contact Us</a></li>
+            <li style="float:right;"><a style="margin: 0em 2em;" class="highlighted" href = "login.html">Login</a></li>
+    </ul>
+    <!------------------------------------------------------------------------------------------------------------>
+    <div class="container">
+        <form id = "playlistForm" method="POST" action="watchlist.html">
+            <table>
+                <tr><td></td><td><label id="plist_msg" class="err_msg"></label></td></tr>
+                <tr><td>Playlsit Name: </td><td> <input type="text" name="playlist" size="28" onkeyup="charCount(this.value)"/></td></tr>
+                <tr><td></td><td><label id="count_msg" class="err_msg"></label></td></tr>
+            </table><br/>
+            <input type="submit" value="Submit"/>
+        </form>
+    </div>
+</body>
+</html>

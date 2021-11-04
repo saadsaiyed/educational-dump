@@ -1,0 +1,170 @@
+Script started on Thu 23 Jan 2020 07:20:13 PM CST
+a049856[21]% 
+a049856[21]% 
+a049856[21]% 
+a049856[21]% 
+a049856[21]% 
+a049856[21]% 
+a049856[21]% make clean
+rm -f *.o demo core.*
+a049856[22]% 
+a049856[22]% mkae[K[K[Kake
+gcc -c -ggdb main.c
+gcc -c -ggdb functions.c
+gcc main.o functions.o -o demo
+a049856[23]% 
+a049856[23]% 
+a049856[23]% valgrind --leak-check=yes demo
+==10013== Memcheck, a memory error detector
+==10013== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==10013== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==10013== Command: demo
+==10013== 
+How big is the array?30
+min value in array is: 34
+==10013== 
+==10013== HEAP SUMMARY:
+==10013==     in use at exit: 0 bytes in 0 blocks
+==10013==   total heap usage: 1 allocs, 1 frees, 120 bytes allocated
+==10013== 
+==10013== All heap blocks were freed -- no leaks are possible
+==10013== 
+==10013== For counts of detected and suppressed errors, rerun with: -v
+==10013== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+a049856[24]% d[Kgdb demo
+[?1034hGNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-115.el7
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-redhat-linux-gnu".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from /home/hercules/s/sas162/cs330/labs/lab2/demo...done.
+(gdb) break 15
+Breakpoint 1 at 0x4007cf: file main.c, line 15.
+(gdb) run[K[K[Kkl[K[Klist
+1	#include <stdio.h>
+2	#include <stdlib.h>
+3	#include <string.h>
+4	
+5	#include "functions.h"
+6	
+7	int main (int argc, char *argv [])
+8	{
+9	    int *array;
+10	    int min = 9999;
+(gdb) list
+11	    int size=0;
+12	
+13	    printf("How big is the array?");
+14	    scanf("%i", &size);
+15	    array = (int *) malloc(size * sizeof(int));
+16	    if (initialize (array, size) != 0 )
+17	    {
+18	        printf ("initialization error\n");
+19	        exit (1);
+20	    }
+(gdb) delete
+Delete all breakpoints? (y or n) y
+(gdb) breq[Kack[K[K[Kk [K[K[K[K[Klist
+21	
+22	    if (findAndReturnMin (array, size, &min) != 0 )
+23	    {
+24	        printf ("someFunction error\n");
+25	        exit (1);
+26	    }
+27	    printf ("min value in array is: %d\n", min);
+28	
+29	    free(array);
+30	
+(gdb) list functions.c;[K:finAndReturnMin
+Function "finAndReturnMin" not defined in "functions.c".
+(gdb) list functions.c:finAndReturnMin[CdAndReturnMin
+36	 * It returns:
+37	 *     0: on success
+38	 *     non-zero: on an error
+39	 */
+40	int findAndReturnMin (int *array, int length, int* min)
+41	{
+42	    int i;
+43	    int temp = array[0];
+44	    for (i = 0; i < length; i++)
+45	    {
+(gdb) breac[Kk functions.c:40
+Breakpoint 2 at 0x4008ff: file functions.c, line 40.
+(gdb) run
+Starting program: /home/hercules/s/sas162/cs330/labs/lab2/demo 
+How big is the array?50
+
+Breakpoint 2, findAndReturnMin (array=0x602010, length=50, 
+    min=0x7fffffffe0c4) at functions.c:43
+43	    int temp = array[0];
+(gdb) length array[0]@[1P array[0]@[1P array[0]@[1P array[0]@[1P array[0]@[C[C[C[C[C[C[C[C[1P array[0]@[C[C[C[C[C[C[C[1P array[0]@[C[C[C[C[C[Cp array[0]@[C[C[C[C[C[C[Cr array[0]@[C[C[C[C[C[C[C[Ci array[0]@n array[0]@t array[0]@[C[C[C[C[C[C[C[C[C[C50
+$1 = {132, 189, 221, 84, 121, 445, 197, 441, 234, 19, 333, 153, 31, 166, 
+  313, 391, 434, 200, 477, 189, 226, 411, 398, 485, 204, 218, 401, 170, 
+  496, 235, 16, 127, 423, 236, 62, 395, 180, 259, 187, 266, 129, 372, 270, 
+  159, 37, 434, 401, 470, 134, 377}
+(gdb) print array[0]@length
+$2 = {132, 189, 221, 84, 121, 445, 197, 441, 234, 19, 333, 153, 31, 166, 
+  313, 391, 434, 200, 477, 189, 226, 411, 398, 485, 204, 218, 401, 170, 
+  496, 235, 16, 127, 423, 236, 62, 395, 180, 259, 187, 266, 129, 372, 270, 
+  159, 37, 434, 401, 470, 134, 377}
+(gdb) print temp
+$3 = 0
+(gdb) next
+44	    for (i = 0; i < length; i++)
+(gdb) nextprint temp
+$4 = 132
+(gdb) print temp[C[C[C[C[C[C[6Pnext
+46	        if (temp > array [i])
+(gdb) next
+44	    for (i = 0; i < length; i++)
+(gdb) next
+46	        if (temp > array [i])
+(gdb) next
+44	    for (i = 0; i < length; i++)
+(gdb) nextprint temp
+$5 = 132
+(gdb) print temp[C[C[C[C[C[C[6Pnext
+46	        if (temp > array [i])
+(gdb) nextprint temp
+$6 = 132
+(gdb) print temp[C[C[C[C[C[C[6Pnext
+44	    for (i = 0; i < length; i++)
+(gdb) next
+46	        if (temp > array [i])
+(gdb) next
+48	            temp = array [i];
+(gdb) next
+44	    for (i = 0; i < length; i++)
+(gdb) nextprint temp[C[C[C[C[C[C[6Pnextprint temp
+$7 = 84
+(gdb) until
+52	    *min = temp;
+(gdb) next
+54	    return 0;
+(gdb) print min
+$8 = (int *) 0x7fffffffe0c4
+(gdb) print min*min
+$9 = 16
+(gdb) next
+55	}
+(gdb) next
+main (argc=1, argv=0x7fffffffe1b8) at main.c:27
+27	    printf ("min value in array is: %d\n", min);
+(gdb) next
+min value in array is: 16
+29	    free(array);
+(gdb) next
+31	    exit (0);
+(gdb) next
+[Inferior 1 (process 10046) exited normally]
+(gdb) next
+The program is not being run.
+(gdb) quiy[Kt
+a049856[25]% exut[K[Kit
+exit
+
+Script done on Thu 23 Jan 2020 07:34:59 PM CST

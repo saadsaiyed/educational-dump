@@ -1,0 +1,167 @@
+Script started on Fri Jan 17 00:01:15 2020
+Script on hercules[21]% cs_clients ients[K[K[K[K[KCL115
+
+a049856 a049825 a049832 a049833 a049834 a049835 a049836 a049837 a049838 a049839 a049840 a049841 a049842 a049843 a049844 a049845 a049846 a049847 a049848 a049849 a049850 a049851 a049852 a049853 a049854 a049855 
+Script on hercules[22]% a049848[1@s[1@s[1@h[1@ 
+
+Warning: Permanently added 'a049848,142.3.168.48' (RSA) to the list of known hosts.
+
+sas162@a049848's password: 
+Last login: Tue Dec 10 12:04:12 2019
+
+Log in at: Fri Jan 17 00:02:19 CST 2020
+
+a049848[21]% 
+
+a049848[21]% 
+
+a049848[21]% 
+
+a049848[21]% 
+
+a049848[21]% 
+
+a049848[21]% 
+
+a049848[22]% cd cs
+
+cs115/ cs330/ 
+
+a049848[22]% cd cs330/
+
+a049848[23]% 
+
+a049848[23]% 
+
+a049848[23]% ls
+
+[0m[01;34massignment1[0m/  [01;34massignment5[0m/     [01;34mexamPrograms[0m/  [01;34mLab1[0m/      [01;34mmyState[0m/                  [01;34mstudentStuff[0m/
+[01;34massignment2[0m/  [01;34massignment6[0m/     [01;34mHALos[0m/         [01;34mlearning[0m/  [01;34mnotes[0m/                    [01;34mtoyShell[0m/
+[01;34massignment3[0m/  [01;34mdiskSimulation[0m/  [01;34mHALosPublic[0m/   [01;34mmyDisk[0m/    [01;34mshellScripts[0m/             [01;34muserLevelOS[0m/
+[01;34massignment4[0m/  [01;34mexamples[0m/        [01;34mHossain[0m/       [01;34mmyShell[0m/   [01;34msocketAndThreadPrograms[0m/
+a049848[24]% cd Lab1/
+
+a049848[25]% 
+
+a049848[25]% 
+
+a049848[25]% ls
+
+submission.log
+a049848[26]% 
+
+a049848[26]% 
+
+a049848[26]% mkdir testscript
+
+a049848[27]% cd testscript/
+
+a049848[28]% 
+
+a049848[28]% .. [K[Kmkdir good bad ugly
+
+a049848[29]% ls
+
+[0m[01;34mbad[0m/  [01;34mgood[0m/  [01;34mugly[0m/
+a049848[30]% pwd
+
+/home/hercules/s/sas162/cs330/Lab1/testscript
+a049848[31]% cd good/
+
+a049848[32]% touch one two three
+
+a049848[33]% 
+
+a049848[33]% ls -l
+
+total 0
+-rw------- 1 sas162 csugrd 0 Jan 17 00:05 one
+-rw------- 1 sas162 csugrd 0 Jan 17 00:05 three
+-rw------- 1 sas162 csugrd 0 Jan 17 00:05 two
+a049848[34]% 
+
+a049848[34]% 
+
+a049848[34]% mkdir BAK
+
+a049848[35]% cp one [K[K[Kthree BAK/three.bak
+
+a049848[36]% ls
+
+[0m[01;34mBAK[0m/  one  three  two
+a049848[37]% cd BAK/
+
+a049848[38]% 
+
+a049848[38]% 
+
+a049848[38]% ls
+
+three.bak
+a049848[39]% ls -l
+
+total 0
+-rw------- 1 sas162 csugrd 0 Jan 17 00:08 three.bak
+a049848[40]% cd ..
+
+a049848[41]% 
+
+a049848[41]% 
+
+a049848[41]% ls
+
+[0m[01;34mBAK[0m/  one  three  two
+a049848[42]% pwd
+
+/home/hercules/s/sas162/cs330/Lab1/testscript/good
+a049848[43]% 
+
+a049848[43]% cp BA[K[K-r BAK[KK/[K ../U[Kugly/
+
+cp-r: Command not found.
+a049848[44]% cp-r BAK ../ugly/pp[1@v
+
+cpv-r: Command not found.
+a049848[45]% cpv-r BAK ../ugly/[P[1@ 
+
+a049848[46]% 
+
+a049848[46]% 
+
+a049848[46]% ls
+
+[0m[01;34mBAK[0m/  one  three  two
+a049848[47]% 
+
+a049848[47]% ls ../ugly/
+
+[0m[01;34mBAK[0m/
+a049848[48]% ri[K[Kls
+
+[0m[01;34mBAK[0m/  one  three  two
+a049848[49]% 
+
+a049848[49]% rmdir BAK/ [1@ [1@-[1@r [1@ 
+
+rmdir: invalid option -- 'r'
+Try 'rmdir --help' for more information.
+a049848[50]% rmdir -r BAK/[P[P[P
+
+a049848[51]% ls
+
+one  three  two
+a049848[52]% 
+
+a049848[52]% 
+
+a049848[52]% lo
+
+[3;J[H[2JLogged out on: Fri Jan 17 00:13:37 CST 2020
+
+Connection to a049848 closed.
+
+Script on hercules[23]% exit
+
+exit
+
+Script done on Fri Jan 17 00:13:49 2020

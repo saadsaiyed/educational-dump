@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Signup</title>
+        <link rel="stylesheet" type="text/css" href="index_styling.css" />
+        <script type="text/javascript" src="signupValidation.js"></script> 
+        <script type = "text/javascript"  src = "signupEvent.js"></script>
+        <style>
+            body{
+                background: #333;
+            }
+            a{
+                display: block;
+                text-decoration: none;
+                color: black;
+            }
+            .container {
+                background: #fff;
+                padding: 1em;
+                border-radius: 20px;
+                border: 10px solid #ccc;
+                box-shadow: 0 1px 2px #0000001a;
+            }
+            label {
+                color: #555;
+                display: inline-block;
+                padding-top: 10px;
+                font-size: 20px;
+            }
+            img{
+                width:300px;
+                height:200px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+                <img src="image/swag.png" alt="swag" style= "max-width: 300px; max-height: 200px;">
+                <div style = "margin-bottom: 1px;">SwaggerSoul</div>    
+        </header>
+        <!-- This is for the Navigation bar -->
+        <!------------------------------------------------------------------------------------------------------------>
+        <ul>
+            <li><a href = "index.html">Home</a></li>
+            <li class="dropdown"><a>Genre</a>
+                <div class="dropdown-content">
+                    <a href = "genre.html">Action</a>
+                    <a href = "genre.html">Adventure</a>
+                    <a href = "genre.html">Biography</a>
+                    <a href = "genre.html">Comedy</a>
+                    <a href = "genre.html">Crime</a>
+                    <a href = "genre.html">Drama</a>
+                    <a href = "genre.html">Family</a>
+                    <a href = "genre.html">Fantasy</a>
+                    <a href = "genre.html">Horror</a>
+                    <a href = "genre.html">Musical</a>
+                    <a href = "genre.html">Mystery</a>
+                    <a href = "genre.html">Patriotic</a>
+                    <a href = "genre.html">Romance</a>
+                    <a href = "genre.html">Sci-fi</a>
+                    <a href = "genre.html">Social</a>
+                    <a href = "genre.html">Sports</a>
+                    <a href = "genre.html">Spy</a>
+                    <a href = "genre.html">Suspense</a>
+                    <a href = "genre.html">Thriller</a>
+                    <a href = "genre.html">War</a>
+                    <a href = "genre.html">Western</a>
+                    <a href = "genre.html">Wuxia</a>
+                    <a href = "genre.html">Zombie</a>
+                </div>
+            </li>
+            <li class="dropdown"><a>Origin</a>
+                <div class="dropdown-content">
+                    <a href = "origin.html">American</a>
+                    <a href = "origin.html">Australian</a>
+                    <a href = "origin.html">Bollywood</a>
+                    <a href = "origin.html">British</a>
+                    <a href = "origin.html">Canadian</a>
+                    <a href = "origin.html">Chinese</a>
+                    <a href = "origin.html">Japanese</a>
+                    <a href = "origin.html">Punjabi</a>
+                    <a href = "origin.html">Russian</a>
+                </div>
+            </li>
+            <li><a href = "watchlist.html">Watchlist</a></li>
+            <li><a href = "contactUs.html">Contact Us</a></li>
+            <li style="float:right;"><a style="margin: 0em 2em;" class="highlighted" href = "login.html">Login</a></li>
+        </ul>
+        <!------------------------------------------------------------------------------------------------------------>
+        <div class="container">
+            <img src="image/login.jpg" alt="login" style="margin-left:auto; margin-right:auto;">
+            <form id="SignUp" method="post" action="login.html">
+                <table>
+                    <tr><td></td><td><label id="fname_msg" class="err_msg"></label></td></tr>          
+                    <tr><td>First Name: </td><td> <input type="text" name="fname" size="30" /></td></tr>
+
+                    <tr><td></td><td><label id="lname_msg" class="err_msg"></label></td></tr>          
+                    <tr><td>Last Name: </td><td> <input type="text" name="lname" size="30" /></td></tr>
+
+                    <tr><td></td><td><label id="email_msg" class="err_msg"></label></td></tr>
+                    <tr><td>Email: </td><td> <input type="text" name="email" size="30" /></td> </tr>
+                    
+                    <tr><td></td><td><label id="uname_msg" class="err_msg"></label></td></tr>          
+                    <tr><td>Username: </td><td> <input type="text" name="uname" size="30" /></td></tr>
+                    
+                    <tr><td></td><td><label id="pswd_msg" class="err_msg"></label></td></tr>
+                    <tr><td>Password: </td><td> <input type="password" name="password" size="30"/></td></tr>
+                    
+                    <tr><td></td><td><label id="pswdr_msg" class="err_msg"></label></td></tr>            
+                    <tr><td>Confirm Password: </td><td> <input type="password" name="pwdr" size="30" /></td></tr>
+                </table><br/>
+                <input type="submit" value="Signup" />
+                <input type="reset" value="Reset" /><br/><br/>
+                <a href = "index.html"><input type="button" value="Guest"/></a>
+            </form>
+        </div>
+    </body>
+</html>

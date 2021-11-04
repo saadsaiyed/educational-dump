@@ -1,0 +1,4 @@
+my sql user id pass;
+
+id = zak316
+pass = mySQL@1

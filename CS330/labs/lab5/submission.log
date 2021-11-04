@@ -1,0 +1,43 @@
+Script started on Fri Feb 14 07:57:28 2020
+Script on hercules[21]% pwd
+/home/hercules/s/sas162/cs330/labs/lab5
+Script on hercules[22]% ls -l
+total 24
+-rw------- 1 sas162 csugrd 1162 Feb 14 07:30 #myIO.cpp#
+-rwx------ 1 sas162 csugrd 8393 Feb 14 07:56 [0m[01;32mmyIO[0m*
+-rw------- 1 sas162 csugrd 1247 Feb 14 07:33 myIO.cpp
+-rw------- 1 sas162 csugrd 2664 Feb 14 07:35 myIO.o
+-rw------- 1 sas162 csugrd    0 Feb 14 07:57 typescript
+[mScript on hercules[23]% ls -l[25Gpwd[Kclear[25Gls[Kcp /net/data/ftp/pub/class/330/Linux/Hilder_Exercise/Exe rcise/* .[A[26Gode .[K[80G r[K[A[31G[26Gp /net/data/ftp/pub/class/330/Linux/Hilder_Exercise/Exe rcise/* .[A[25Gls[K[80G r[K[A[27Gclear[25Gpwd[Kls -l[25G[KmyIO[1@.[1@/
+error! not enough arguments
+Script on hercules[24]% ./myIO file.txt
+Hi there this t is test
+()^[[DUsed certain things
+
+Parent
+Hi there this is test
+()[DUsed certain things
+Script on hercules[25]% ls -l
+total 28
+-rw------- 1 sas162 csugrd 1162 Feb 14 07:30 #myIO.cpp#
+-rw------- 1 sas162 csugrd   47 Feb 14 07:59 file.txt
+-rwx------ 1 sas162 csugrd 8393 Feb 14 07:56 [0m[01;32mmyIO[0m*
+-rw------- 1 sas162 csugrd 1247 Feb 14 07:33 myIO.cpp
+-rw------- 1 sas162 csugrd 2664 Feb 14 07:35 myIO.o
+-rw------- 1 sas162 csugrd    0 Feb 14 07:57 typescript
+[mScript on hercules[26]% cat file.txt
+Hi there this is test
+()[DUsed certain things
+Script on hercules[27]% 
+Script on hercules[27]% 
+Script on hercules[27]% cat file.txt[25Gls -l[K[25G./myIO file.txt[1@/[P[P
+Error: Permission denied
+
+Parent
+Error: No such file or directory
+Script on hercules[28]% quit
+quit: Command not found.
+Script on hercules[29]% exit
+exit
+
+Script done on Fri Feb 14 08:00:43 2020

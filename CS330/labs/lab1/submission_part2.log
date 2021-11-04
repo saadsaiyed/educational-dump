@@ -1,0 +1,67 @@
+
+Script started on Fri Jan 17 01:05:54 2020
+Script on hercules[21]% 
+
+Script on hercules[21]% 
+
+Script on hercules[21]% 
+
+Script on hercules[21]% 
+
+Script on hercules[21]% ls
+
+[0m[01;32ma[0m*  lab1.c  memory_segments.cpp  memory_segments.o  submission.log  submission1.log  [01;34mtestscript[0m/
+[mScript on hercules[22]% 
+
+Script on hercules[22]% 
+
+Script on hercules[22]% 
+
+Script on hercules[22]% lsosrm -r BAK/[27G[3@dir[38G[25Gls ../ugly/[K[25Grmdir -r BAK/[27G[3P[35G[25Gls[Kos[Kg++ -o a lab1.c 
+
+Script on hercules[23]% 
+
+Script on hercules[23]% 
+
+Script on hercules[23]% ls
+
+[0m[01;32ma[0m*  lab1.c  memory_segments.cpp  memory_segments.o  submission.log  submission1.log  [01;34mtestscript[0m/
+[mScript on hercules[24]% 
+
+Script on hercules[24]% a
+
+0x7fffcd4d439c (140736637780892): Address of local uninitialized variable num
+0x7fffcd4d4398 (140736637780888): Address of local uninitialized variable ans
+
+
+Please enter a number for factorial calculation: 5
+0x7fffcd4d437c (140736637780860): Address of argument variable 'num'
+0x7fffcd4d435c (140736637780828): Address of argument variable 'num'
+0x7fffcd4d433c (140736637780796): Address of argument variable 'num'
+0x7fffcd4d431c (140736637780764): Address of argument variable 'num'
+0x7fffcd4d42fc (140736637780732): Address of argument variable 'num'
+0x7fffcd4d42dc (140736637780700): Address of argument variable 'num'
+The factorial is 120
+
+Script on hercules[25]% 
+
+Script on hercules[25]% 
+
+Script on hercules[25]% a
+
+0x7fff8130835c (140735360828252): Address of local uninitialized variable num
+0x7fff81308358 (140735360828248): Address of local uninitialized variable ans
+
+
+Please enter a number for factorial calculation: 3
+0x7fff8130833c (140735360828220): Address of argument variable 'num'
+0x7fff8130831c (140735360828188): Address of argument variable 'num'
+0x7fff813082fc (140735360828156): Address of argument variable 'num'
+0x7fff813082dc (140735360828124): Address of argument variable 'num'
+The factorial is 6
+
+Script on hercules[26]% exit
+
+exit
+
+Script done on Fri Jan 17 01:06:57 2020

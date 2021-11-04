@@ -1,0 +1,56 @@
+    Computer Science 350
+    Programming Language Concepts
+
+    Department of Computer Science
+    University of Regina
+    Winter 2021
+
+
+    Assignment 1
+
+    Hand out date: January 22, 2021
+    Due date:      February 5, 2021
+
+
+    1. Briefly explain the main criteria in evaluating a programming
+       language.  Compare two programming languages of your choice 
+       based on these criteria.
+
+    2. Discuss three possible ways to classify programming languages into
+       different classes.  Explain what are the main functions of each
+       of the classification methods.
+
+    3. Describe three perspectives/views on programming languages (i.e.,
+       user, designer, and implementer).
+ 
+    4. Find an article or a book chapter on the philosophy or principles of
+       UNIX operating systems.  Discuss two particular principles
+       and explain their connections to programming languages. 
+
+    5. Find a paper or a book on structured programming.
+       Briefly describe the main ideas of structured programming.
+       (Provide complete reference information of the paper or book.)
+
+    6. Read the paper:
+       Donald E. Knuth, Literate Programming.
+       Give a brief summary of "Literate Programming."
+
+    7. Describe influences of computer architectures and
+       programming methodology on the development of programming
+       languages.
+
+    8. Draw float charts of three basic control structures.
+
+    9. Draw a flowchart to find the maximum value and the minimum value
+       of a list of N numbers, where N >= 1. 
+       Identify the basic control blocks in your flowchart.
+
+   10. Draw a flowchart to find the maximum value and the minimum value
+       of a list of positive numbers, where -1 indicates the end of the list. 
+       Identify the basic control blocks in your flowchart.
+
+
+10 marks/question, 100 marks in total.
+
+
+   

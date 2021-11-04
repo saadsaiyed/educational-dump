@@ -1,0 +1,12 @@
+Name: Saad Saiyed
+Student No.: 200415258
+Class: CS 215 - 001
+CRN No.: 30682
+
+SUBMISSION LINK: http://www2.cs.uregina.ca/~sas162/
+(scroll to the bottom)
+
+MYSQL DETAILS->
+
+USER_ID:sas162
+PASSWORD:Abcd@123

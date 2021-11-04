@@ -1,0 +1,88 @@
+body{
+    background: #17141d;
+    color: #c2c2c2;
+}
+
+body:not(#Head1){
+    font-size: 20px;
+}
+
+.cards {
+    position: relative;
+    display: grid;
+    place-items: center;
+    display: flex;
+    margin: 1rem;
+}
+
+.card {
+    background: #17141d;
+    color: White;
+    font-size: 15px;
+    height: 400px;
+    width: 250px;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: -1rem 0 3rem #000;
+    transition: 0.2s;
+}
+
+.cardDetail{
+    position: relative;
+    bottom: -10px;
+}
+
+/*This is to overlap the cards*/
+.card:not(:first-child) {
+    margin-left: -4rem;
+}
+
+/*This is for poping card out*/
+.card:hover,
+.card:focus-within {
+    transform: translateY(-1rem);
+}
+
+/*This is for pusing rest of the cards to right
+focus-within is to be precise with tabing through the window*/
+.card:hover ~ .card,
+.card:focus-within ~ .card{
+        transform: translateX(4rem);
+}
+
+header, footer {
+    padding: 0.5em;
+    background-color: #100e17;
+    clear: left;
+}
+
+section {
+    margin-left: calc( 460px + 30px );
+    border-left: 2px solid gray;
+    padding: 1em;
+}
+
+aside {
+    float: left;
+    position: sticky;
+    clear: both;
+    top: 1em;
+    width: 460px;
+    padding: 10px;
+    border-bottom: 2px solid gray;
+}
+
+ol {
+    list-style-type: upper-roman;
+}
+
+a:hover{
+    background: -webkit-linear-gradient(wheat, green);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}

@@ -1,0 +1,310 @@
+/********************* 1) CREATING TABLES ************************/
+
+CREATE TABLE User_Table (
+	User_ID INT NOT NULL AUTO_INCREMENT,
+	First_Name VARCHAR (50) NOT NULL,
+	Last_Name VARCHAR (50) NOT NULL,
+	Username VARCHAR (50) NOT NULL,
+	E_mail VARCHAR (50) NOT NULL,
+	Password VARCHAR (50) NOT NULL,
+	Is_LogedIn BOOL NOT NULL,
+	Avtar VARCHAR (50),
+	PRIMARY KEY (User_ID) 
+	);
+	
+CREATE TABLE Movie_Table(
+	Movie_ID INT NOT NULL AUTO_INCREMENT,
+	Movie_Name VARCHAR (50) NOT NULL,
+	Release_Date DATETIME NOT NULL,
+	Rating INT,
+	Poster VARCHAR (50),Poster, 
+	Director VARCHAR (50),
+	Cast VARCHAR (50),
+	Wiki_Link VARCHAR (50),
+	Genre_ID INT NOT NULL,
+	Origin_ID INT NOT NULL,
+	PRIMARY KEY (Movie_ID),
+	FOREIGN KEY (Genre_ID) REFERENCES Gener (Genre_ID),
+	FOREIGN KEY (Origin_ID) REFERENCES Origin (Origin_ID)
+	);
+	
+CREATE TABLE Watchlist_Table(
+	Watchlist_ID INT NOT NULL AUTO_INCREMENT,
+	User_ID INT NOT NULL,
+	Watchlist_Name VARCHAR(50) NOT NULL,
+	Create_Time DATETIME NOT NULL,
+	PRIMARY KEY (Watchlist_ID),
+	FOREIGN KEY (User_ID) REFERENCES User_Table (User_ID)
+	);
+
+CREATE TABLE Movie_Watchlist_Bridge(
+	Movie_ID INT NOT NULL,
+	Watchlist_ID INT NOT NULL,
+	Add_Time DATETIME NOT NULL,
+	PRIMARY KEY (Movie_ID, Watchlist_ID),
+	FOREIGN KEY (Movie_ID) REFERENCES Movie_Table (Movie_ID),
+	FOREIGN KEY (Watchlist_ID) REFERENCES Watchlist_Table (Watchlist_ID)
+	);
+
+CREATE TABLE View_Table(
+	Movie_ID INT NOT NULL,
+	User_ID INT NOT NULL,
+	User_Rating INT,
+	Rate_Time DATETIME NOT NULL,
+	Watch_Time DATETIME NOT NULL,
+	Is_Watched BOOL,
+	PRIMARY KEY (Movie_ID, User_ID),
+	FOREIGN KEY (Movie_ID) REFERENCES Movie_Table (Movie_ID),
+	FOREIGN KEY (User_ID) REFERENCES User_Table (User_ID)
+	);
+
+CREATE TABLE Genre_Table(
+	Genre_ID INT NOT NULL AUTO_INCREMENT,
+	Genre_Name VARCHAR(50) NOT NULL,
+	PRIMARY KEY (Genre_ID)
+	);
+	
+CREATE TABLE Origin_Table(
+	Origin_ID INT NOT NULL AUTO_INCREMENT,
+	Origin_Name VARCHAR(50) NOT NULL,
+	PRIMARY KEY (Origin_ID)
+	);
+
+/********************* 2. Data Storage Queries ************************/
+
+a)	UPDATE User_Table
+	SET isLogedIn = true 
+	WHERE userID = 1;
+	
+	UPDATE User_Table
+	SET isLogedIn = false 
+	WHERE userID = 1;
+	
+b)  INSERT INTO User_Table
+	(First_Name, Last_Name, Username, E_mail, Password, Is_LogedIn, Avtar)
+	VALUES
+	("Swagger", "Soul", "sas162", "sas162@uregina.ca", "Shutdown@123",  false, "Avtar_URL");
+
+INSERT INTO Movie_Table
+(Movie_Name, Release_Date, Rating, Genre_ID, Origin_ID)
+VALUES
+("Titanic", (STR_TO_DATE('1997-11-01','%Y-%m-%d')), 8, 1, 1);
+
+INSERT INTO Movie_Table
+(Movie_Name, Release_Date, Rating, Genre_ID, Origin_ID)
+VALUES
+("Titanic1", (STR_TO_DATE('1997-11-01','%Y-%m-%d')), 4, 1, 1);
+
+INSERT INTO Movie_Table
+(Movie_Name, Release_Date, Rating, Genre_ID, Origin_ID)
+VALUES
+("Titanic2", (STR_TO_DATE('1997-11-01','%Y-%m-%d')), 8, 1, 1);
+
+INSERT INTO Movie_Table
+(Movie_Name, Release_Date, Rating, Genre_ID, Origin_ID)
+VALUES
+("Titanic3", (STR_TO_DATE('1997-11-01','%Y-%m-%d')), 9, 1, 1);
+
+INSERT INTO Movie_Table
+(Movie_Name, Release_Date, Rating, Genre_ID, Origin_ID)
+VALUES
+("Titanic4", (STR_TO_DATE('1997-11-01','%Y-%m-%d')), 7, 1, 1);
+
+INSERT INTO Movie_Table
+(Movie_Name, Release_Date, Rating, Genre_ID, Origin_ID)
+VALUES
+("Titanic5", (STR_TO_DATE('1997-11-01','%Y-%m-%d')), 10, 1, 1);
+
+INSERT INTO Movie_Table
+(Movie_Name, Release_Date, Rating, Genre_ID, Origin_ID)
+VALUES
+("Titanic6", (STR_TO_DATE('1997-11-01','%Y-%m-%d')), 2, 1, 1);
+
+INSERT INTO Movie_Table
+(Movie_Name, Release_Date, Rating, Genre_ID, Origin_ID)
+VALUES
+("Titanic7", (STR_TO_DATE('1997-11-01','%Y-%m-%d')), 0, 1, 1);
+
+INSERT INTO Movie_Table
+(Movie_Name, Release_Date, Rating, Genre_ID, Origin_ID)
+VALUES
+("Titanic8", (STR_TO_DATE('1997-11-01','%Y-%m-%d')), 1, 1, 1);
+
+INSERT INTO Movie_Table
+(Movie_Name, Release_Date, Rating, Genre_ID, Origin_ID)
+VALUES
+("Titanic9", (STR_TO_DATE('1997-11-01','%Y-%m-%d')), 7, 1, 1);
+
+INSERT INTO Movie_Table
+(Movie_Name, Release_Date, Rating, Genre_ID, Origin_ID)
+VALUES
+("Titanic10", (STR_TO_DATE('1997-11-01','%Y-%m-%d')), 6, 1, 1);
+
+INSERT INTO Movie_Table
+(Movie_Name, Release_Date, Rating, Genre_ID, Origin_ID)
+VALUES
+("Titanic11", (STR_TO_DATE('1997-11-01','%Y-%m-%d')), 5, 1, 1);
+
+INSERT INTO Movie_Table
+(Movie_Name, Release_Date, Rating, Genre_ID, Origin_ID)
+VALUES
+("Titanic12", (STR_TO_DATE('1997-11-01','%Y-%m-%d')), 9, 1, 1);
+
+INSERT INTO Movie_Table
+(Movie_Name, Release_Date, Rating, Genre_ID, Origin_ID)
+VALUES
+("Titanic13", (STR_TO_DATE('1997-11-01','%Y-%m-%d')), 8, 1, 1);
+
+INSERT INTO Movie_Table
+(Movie_Name, Release_Date, Rating, Genre_ID, Origin_ID)
+VALUES
+("Titanic14", (STR_TO_DATE('1997-11-01','%Y-%m-%d')), 10, 1, 1);
+
+INSERT INTO Movie_Table
+(Movie_Name, Release_Date, Rating, Genre_ID, Origin_ID)
+VALUES
+("Titanic15", (STR_TO_DATE('1997-11-01','%Y-%m-%d')), 8, 1, 1);
+
+
+INSERT INTO Movie_Table
+(Movie_Name, Release_Date, Rating, Genre_ID, Origin_ID)
+VALUES
+("ET", (STR_TO_DATE('1997-11-01','%Y-%m-%d')), 9, 1, 1);
+
+INSERT INTO Movie_Table
+(Movie_Name, Release_Date, Rating, Genre_ID, Origin_ID)
+VALUES
+("ET1", (STR_TO_DATE('1997-11-01','%Y-%m-%d')), 2, 1, 1);
+
+INSERT INTO Movie_Table
+(Movie_Name, Release_Date, Rating, Genre_ID, Origin_ID)
+VALUES
+("ET2", (STR_TO_DATE('1997-11-01','%Y-%m-%d')), 10, 1, 1);
+
+
+INSERT INTO View_Table
+	(Movie_ID, User_ID, User_Rating, Rate_Time, Watch_Time, Is_Watched)
+	VALUES
+	(1, 1, 7, (STR_TO_DATE('2019-11-30','%Y-%m-%d')), (STR_TO_DATE('2019-11-29','%Y-%m-%d')), true);
+
+UPDATE View_Table
+SET User_Rating = 8, Rate_Time = (STR_TO_DATE('2019-11-30','%Y-%m-%d'))
+WHERE User_ID = 1 and Movie_ID = 1;
+
+UPDATE View_Table
+SET Is_Watched = true, Watch_Time = (STR_TO_DATE('2018-11-25','%Y-%m-%d'))
+WHERE User_ID = 1 and Movie_ID = 1;
+	
+INSERT INTO Watchlist_Table
+	(User_ID, Watchlist_Name, Create_Time)
+	VALUES
+	(1,"Top 5", (STR_TO_DATE('2019-11-29','%Y-%m-%d')));
+
+INSERT INTO Movie_Watchlist_Bridge
+	(Movie_ID, Watchlist_ID, Add_Time)
+	VALUES
+	(1, 1, (STR_TO_DATE('2019-11-29','%Y-%m-%d')));
+
+/**************** 3) DATA RETRIEVAL QUERIES ***************************/
+
+a)	SELECT COUNT(*) FROM Messages 
+	WHERE expiryDT < NOW();
+	
+	SELECT COUNT(DISTINCT(messageID)) FROM Viewers;
+	
+	SELECT UserzID, handle FROM Users
+	WHERE ;
+	
+
+
+
+SELECT User_ID, Username, Avtar
+FROM User_Table
+WHERE Password = "Shutdown@123" and Username = "sas162";
+
+
+SELECT Movie_Name, Movie_ID, Poster, Rating
+FROM Movie_Table
+ORDER BY Rating DESC
+LIMIT 15;
+
+SELECT Movie_Name, Movie_ID, Poster, Rating
+FROM Movie_Table
+ORDER BY Release_Date DESC
+LIMIT 15;
+
+SELECT Movie_Name, Movie_ID, Poster, Rating
+FROM Movie_Table
+ORDER BY Movie_Name ASC
+LIMIT 15;
+
+SELECT Movie_Name, Movie_ID, Poster, Rating
+FROM Movie_Table
+WHERE Movie_Name
+LIKE "%T%";
+
+SELECT  M.Movie_Name, M.Movie_ID, M.Poster, M.Rating
+FROM Movie_Table M, Genre_Table G
+WHERE M.Genre_ID = G.Genre_ID and G.Genre_Name = "American";
+ORDER BY M.Rating DESC
+LIMIT 15;
+
+SELECT  M.Movie_Name, M.Movie_ID, M.Poster, M.Rating
+FROM Movie_Table M, Origin_Table O
+WHERE M.Origin_ID = O.Origin_ID and O.Origin_Name = "American";
+ORDER BY M.Rating DESC
+LIMIT 15;
+
+/////////////////////////////
+SELECT *
+FROM Movie_Table
+WHERE SELECT Origin_ID FROM Origin_Table WHERE Origin_Name LIKE "%American%"
+ORDER BY Rating DESC
+LIMIT 15;
+
+SELECT M.Movie_ID, M.Movie_Name, M.Release_Date, O.Origin_Name
+FROM Movie_Table M, Origin_Table O
+WHERE M.Origin_ID = O.Origin_ID and O.Origin_Name = "American";
+
+INSERT INTO Origin_Table
+(Origin_Name)
+VALUES
+("American");
+/////////////////////////////
+
+C. 
+SELECT M.Movie_Name, M.Poster, G.Genre_Name, O.Origin_Name, M.Rating, M.Cast, M.Director, M.Wiki_Link
+FROM Movie_Table M, Genre_Table G, Origin_Table O
+WHERE M.Movie_ID = 12 and M.Genre_ID = G.Genre_ID and M.Origin_ID = O.Origin_ID;
+
+D.
+SELECT Watchlist_Name
+FROM Watchlist_Table
+ORDER BY Create_Time DESC;
+
+E.
+SELECT M.Movie_Name, B.Movie_ID, M.Rating
+FROM Movie_Watchlist_Bridge B, Movie_Table M
+WHERE M.Movie_ID = B.Movie_ID
+ORDER BY Add_Time DESC;
+
+b)	SELECT userID, handle, avtar FROM Users
+	WHERE handle = "username" AND password = "password";
+	
+c)	SELECT Messages.messageID, Users.userID, Users.handle, Users.avtar
+	FROM Users INNER JOIN Messages
+	ON Users.userID = Messages.userID
+	WHERE Messages.expiryDT > NOW()
+	ORDER BY Messages.expiryDT;
+	
+d)	SELECT Users.avtar, Users.handle, Messages.topic, Messages.message, Messages.postDT
+	FROM Users INNER JOIN Messages
+	ON Users.userID = Messages.userID
+	WHERE Messages.messageID = 1221 AND Messages.accessCode = "Q34EQ2";
+	
+	SELECT Users.avtar, Users.handle, Viewers.viewDT 
+	FROM Users INNER JOIN Viewers
+	ON Users.userID = Viewers.userID
+	WHERE Viewers.messageID = 1221
+	ORDER BY Viewers.viewDT
+	LIMIT 5;

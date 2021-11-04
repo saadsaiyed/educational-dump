@@ -1,0 +1,10 @@
+Name: Saad Saiyed
+Student No.: 200415258
+Class: CS 215 - 001
+CRN No.: 30682
+
+SUBMISSION LINK: http://www2.cs.uregina.ca/~sas162/
+(scroll to the bottom)
+
+Login.html and Signup.html has their own seperate function call files of javascript.
+Other than these two files every file has their function call exclusively emmbaded.

@@ -1,0 +1,53 @@
+mysql> describe Movie_Table;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| Movie_ID   | int(11)     | NO   | PRI | NULL    | auto_increment |
+| Movie_Name | varchar(50) | NO   |     | NULL    |                |
+| Poster     | varchar(50) | YES  |     | NULL    |                |
+| Director   | varchar(50) | YES  |     | NULL    |                |
+| Cast       | varchar(50) | YES  |     | NULL    |                |
+| Wiki_Link  | varchar(50) | YES  |     | NULL    |                |
+| Genre      | varchar(58) | NO   |     | NULL    |                |
+| Origin     | varchar(10) | NO   |     | NULL    |                |
+| Year       | int(11)     | NO   |     | NULL    |                |
+| Rating     | int(11)     | YES  |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+
+mysql> describe View_Table;
++-------------+------------+------+-----+---------+-------+
+| Field       | Type       | Null | Key | Default | Extra |
++-------------+------------+------+-----+---------+-------+
+| Movie_ID    | int(11)    | NO   | PRI | NULL    |       |
+| User_ID     | int(11)    | NO   | PRI | NULL    |       |
+| User_Rating | int(11)    | YES  |     | NULL    |       |
+| Rate_Time   | datetime   | NO   |     | NULL    |       |
+| Watch_Time  | datetime   | NO   |     | NULL    |       |
+| Is_Watched  | tinyint(1) | YES  |     | NULL    |       |
++-------------+------------+------+-----+---------+-------+
+
+mysql> describe User_Table;
++---------------+-------------+------+-----+---------+----------------+
+| Field         | Type        | Null | Key | Default | Extra          |
++---------------+-------------+------+-----+---------+----------------+
+| User_ID       | int(11)     | NO   | PRI | NULL    | auto_increment |
+| First_Name    | varchar(50) | NO   |     | NULL    |                |
+| Last_Name     | varchar(50) | NO   |     | NULL    |                |
+| Username      | varchar(50) | NO   |     | NULL    |                |
+| E_mail        | varchar(50) | NO   |     | NULL    |                |
+| Password      | varchar(50) | NO   |     | NULL    |                |
+| Date_Of_Birth | datetime    | YES  |     | NULL    |                |
+| Phone_Number  | varchar(50) | NO   |     | NULL    |                |
+| Is_LogedIn    | tinyint(1)  | NO   |     | NULL    |                |
+| Avtar         | varchar(50) | YES  |     | NULL    |                |
++---------------+-------------+------+-----+---------+----------------+
+
+mysql> describe Watchlist_Table;
++----------------+-------------+------+-----+---------+----------------+
+| Field          | Type        | Null | Key | Default | Extra          |
++----------------+-------------+------+-----+---------+----------------+
+| Watchlist_ID   | int(11)     | NO   | PRI | NULL    | auto_increment |
+| User_ID        | int(11)     | NO   | MUL | NULL    |                |
+| Watchlist_Name | varchar(50) | NO   |     | NULL    |                |
+| Create_Time    | datetime    | NO   |     | NULL    |                |
++----------------+-------------+------+-----+---------+----------------+

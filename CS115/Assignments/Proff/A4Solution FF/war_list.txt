@@ -1,0 +1,4 @@
+3
+hoard.txt
+peace.txt
+trap.txt
